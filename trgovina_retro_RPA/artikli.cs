@@ -18,10 +18,11 @@ namespace trgovina_retro_RPA
             InitializeComponent();
             listView1.SelectedIndexChanged += ListView1_SelectedIndexChanged;
             btn_uredi.Enabled = false;
+            btn_izbrisi.Enabled = false;
 
             listView1.View = View.Details;
             listView1.Columns.Add("ID", 25);
-            listView1.Columns.Add("Ime", 80);
+            listView1.Columns.Add("Ime", 85);
             listView1.Columns.Add("Cena", 80);
             listView1.Columns.Add("Kategorija", 70);
             listView1.Columns.Add("Zaloga", 50);
@@ -78,6 +79,7 @@ namespace trgovina_retro_RPA
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             btn_uredi.Enabled = listView1.SelectedItems.Count > 0;
+            btn_izbrisi.Enabled = listView1.SelectedItems.Count > 0;
         }
 
         private void btn_uredi_Click(object sender, EventArgs e)
@@ -135,6 +137,48 @@ namespace trgovina_retro_RPA
             catch (Exception ex)
             {
                 MessageBox.Show($"Napaka pri kreirajnu CSV datoteke: {ex.Message}\nInner Exception: {ex.InnerException?.Message}");
+            }
+        }
+
+        private void btn_izbrisi_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Ali ste prepričani, da želite izbrisati izbrani artikel?", "Potrditev brisanja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                        {
+                            connection.Open();
+
+                            ListViewItem selectedItem = listView1.SelectedItems[0];
+                            int id = Convert.ToInt32(selectedItem.SubItems[0].Text);
+
+                            listView1.Items.Remove(selectedItem);
+
+                            string query = "DELETE FROM artikli WHERE id = @id";
+
+                            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                            {
+                                cmd.Parameters.AddWithValue("@id", id);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Artikel uspešno izbrisan!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Napaka pri brisanju artikla: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Najprej izberite artikel, ki ga želite izbrisati.");
             }
         }
     }
