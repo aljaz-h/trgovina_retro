@@ -36,10 +36,20 @@ namespace trgovina_retro_RPA
                 {
                     emptyFields.Add("Cena artikla");
                 }
+                else if (!decimal.TryParse(txtBox_cena_A.Text, out decimal cenaArtikla))
+                {
+                    MessageBox.Show("Vnesite veljavno številko za ceno artikla.");
+                    return;
+                }
 
                 if (string.IsNullOrWhiteSpace(txtBox_zaloga_A.Text))
                 {
                     emptyFields.Add("Zaloga artikla");
+                }
+                else if (!int.TryParse(txtBox_zaloga_A.Text, out int zalogaArtikla))
+                {
+                    MessageBox.Show("Vnesite veljavno številko za zalogo artikla.");
+                    return;
                 }
 
                 if (string.IsNullOrWhiteSpace(comBox_kategorije_A.Text))
@@ -76,6 +86,11 @@ namespace trgovina_retro_RPA
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Podatki so bili uspešno shranjeni.");
+
+                        txtBox_ime_A.Clear();
+                        txtBox_cena_A.Clear();
+                        txtBox_zaloga_A.Clear();
+                        comBox_kategorije_A.Text = "";
                     }
                 }
             }

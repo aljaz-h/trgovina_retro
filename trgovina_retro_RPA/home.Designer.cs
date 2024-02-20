@@ -32,6 +32,7 @@
             this.btn_zapri = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_zapisi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_artikli
@@ -74,11 +75,22 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "RETRO";
             // 
+            // btn_zapisi
+            // 
+            this.btn_zapisi.Location = new System.Drawing.Point(56, 203);
+            this.btn_zapisi.Name = "btn_zapisi";
+            this.btn_zapisi.Size = new System.Drawing.Size(200, 60);
+            this.btn_zapisi.TabIndex = 13;
+            this.btn_zapisi.Text = "ZAPISI";
+            this.btn_zapisi.UseVisualStyleBackColor = true;
+            this.btn_zapisi.Click += new System.EventHandler(this.btn_zapisi_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 355);
+            this.Controls.Add(this.btn_zapisi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_zapri);
@@ -97,5 +109,6 @@
         private System.Windows.Forms.Button btn_zapri;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_zapisi;
     }
 }

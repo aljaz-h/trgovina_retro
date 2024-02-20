@@ -90,3 +90,4 @@ D:\SOLA\2.letnik\trgovina_retro\trgovina_retro_RPA\trgovina_retro_RPA\bin\Debug\
 D:\SOLA\2.letnik\trgovina_retro\trgovina_retro_RPA\trgovina_retro_RPA\bin\Debug\Microsoft.Extensions.Primitives.xml
 D:\SOLA\2.letnik\trgovina_retro\trgovina_retro_RPA\trgovina_retro_RPA\bin\Debug\Newtonsoft.Json.xml
 D:\SOLA\2.letnik\trgovina_retro\trgovina_retro_RPA\trgovina_retro_RPA\bin\Debug\System.ValueTuple.xml
+D:\SOLA\2.letnik\trgovina_retro\trgovina_retro_RPA\trgovina_retro_RPA\obj\Debug\trgovina_retro_RPA.zapisi.resources

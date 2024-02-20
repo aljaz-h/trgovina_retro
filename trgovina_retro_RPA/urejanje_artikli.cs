@@ -51,6 +51,45 @@ namespace trgovina_retro_RPA
 
             try
             {
+                List<string> emptyFields = new List<string>();
+
+                if (string.IsNullOrWhiteSpace(updatedIme))
+                {
+                    emptyFields.Add("Ime artikla");
+                }
+
+                if (string.IsNullOrWhiteSpace(updatedCena))
+                {
+                    emptyFields.Add("Cena artikla");
+                }
+                else if (!decimal.TryParse(updatedCena, out decimal cenaArtikla))
+                {
+                    MessageBox.Show("Vnesite veljavno številko za ceno artikla.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(updatedZaloga))
+                {
+                    emptyFields.Add("Zaloga artikla");
+                }
+                else if (!int.TryParse(updatedZaloga, out int zalogaArtikla))
+                {
+                    MessageBox.Show("Vnesite veljavno številko za zalogo artikla.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(updatedKategorija))
+                {
+                    emptyFields.Add("Kategorija artikla");
+                }
+
+                if (emptyFields.Any())
+                {
+                    string message = "Prosimo, izpolnite naslednja polja:\n" + string.Join("\n", emptyFields);
+                    MessageBox.Show(message);
+                    return;
+                }
+
                 using (MySqlConnection connection = new MySqlConnection(ConnectionString))
                 {
                     connection.Open();

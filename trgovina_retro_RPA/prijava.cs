@@ -67,7 +67,15 @@ namespace trgovina_retro_RPA
 
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        return count > 0;
+                        if (count > 0)
+                        {
+                            //VstaviVpisVBazo(uporabniskoIme);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 }
             }
@@ -75,6 +83,30 @@ namespace trgovina_retro_RPA
             {
                 MessageBox.Show("Napaka pri preverjanju prijave v bazi: " + ex.Message);
                 return false;
+            }
+        }
+
+        private void VstaviVpisVBazo(string uporabniskoIme)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string insertQuery = "INSERT INTO zapisi (uporabnik, cas_vpisa) VALUES (@uporabnik, @casVpisa)";
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@uporabnik", uporabniskoIme);
+                        cmd.Parameters.AddWithValue("@casVpisa", DateTime.Now);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri vstavljanju podatkov v bazo: " + ex.Message);
             }
         }
     }

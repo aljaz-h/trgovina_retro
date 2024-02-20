@@ -28,5 +28,12 @@ namespace trgovina_retro_RPA
         {
             this.Close();
         }
+
+        private void btn_zapisi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            zapisi zapisi = new zapisi();
+            zapisi.Show();
+        }
     }
 }
