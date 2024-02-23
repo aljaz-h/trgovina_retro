@@ -12,6 +12,16 @@ namespace trgovina_retro_RPA
         public registracija()
         {
             InitializeComponent();
+
+            txtBox_upime.KeyPress += txtBox_upime_znaki;
+        }
+
+        private void txtBox_upime_znaki(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btn_prijavi_Click(object sender, EventArgs e)
