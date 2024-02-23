@@ -462,14 +462,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="trgovina_retro_RPA.exe" size="39856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="trgovina_retro_RPA.exe" size="40368">
       <assemblyIdentity name="trgovina_retro_RPA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jCoAOPcg3bpZOiKp9ozFg5F4UNzMMlYlLt47yeiWUoA=</dsig:DigestValue>
+        <dsig:DigestValue>XdoB6d1ar1EFRPXY1sd4yUtLdapqC0RTC5vo9geLQB8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
