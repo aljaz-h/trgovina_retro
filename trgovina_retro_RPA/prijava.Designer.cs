@@ -85,6 +85,7 @@
             // 
             // btn_nazaj
             // 
+            this.btn_nazaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_nazaj.Location = new System.Drawing.Point(117, 378);
             this.btn_nazaj.Name = "btn_nazaj";
             this.btn_nazaj.Size = new System.Drawing.Size(200, 60);
@@ -95,6 +96,7 @@
             // 
             // btn_prijavi
             // 
+            this.btn_prijavi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_prijavi.Location = new System.Drawing.Point(117, 246);
             this.btn_prijavi.Name = "btn_prijavi";
             this.btn_prijavi.Size = new System.Drawing.Size(200, 60);
@@ -105,6 +107,7 @@
             // 
             // btn_registracija
             // 
+            this.btn_registracija.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_registracija.Location = new System.Drawing.Point(117, 312);
             this.btn_registracija.Name = "btn_registracija";
             this.btn_registracija.Size = new System.Drawing.Size(200, 60);

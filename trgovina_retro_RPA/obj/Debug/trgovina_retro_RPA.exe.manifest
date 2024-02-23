@@ -469,7 +469,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gdNCmgX2aLQ+Lvq8eUIPsB3L+S9M8fWkpmZAm3Td1EA=</dsig:DigestValue>
+        <dsig:DigestValue>jCoAOPcg3bpZOiKp9ozFg5F4UNzMMlYlLt47yeiWUoA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -485,13 +485,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="trgovina_retro_RPA.exe.config" size="2825">
+  <file name="trgovina_retro_RPA.exe.config" size="2989">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>twSeh+3aqOEXk07nPSmJP70InKuz0LKVnXBE/MX/Rrw=</dsig:DigestValue>
+      <dsig:DigestValue>8UJySfQ+AJzgvKhreBbxx8YwHbskquuU4fq6ft/Dqgg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
